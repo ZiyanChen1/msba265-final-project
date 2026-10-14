@@ -1,0 +1,14 @@
+column,business_meaning,data_type,unit,risk_signal,handling,missing,n_unique,observed_range
+id,Unique loan application number,Identifier,-,None,Drop (not a feature),0,593994,"0.00 to 593,993.00"
+annual_income,Borrower's yearly income; ability to repay,Numeric,USD,Higher income → lower risk,"log1p, then scale",0,119728,"6,002.43 to 393,381.74"
+debt_to_income_ratio,Existing debt payments / income; how stretched the borrower is,Numeric,Ratio,Higher DTI → higher risk,"log, then scale",0,526,0.01 to 0.63
+credit_score,Credit bureau score; past repayment behavior,Numeric,Points (300-850),Higher score → lower risk,Scale,0,399,395.00 to 849.00
+loan_amount,Principal requested; size of the lender's exposure,Numeric,USD,Larger loan → more money at risk,Scale,0,111570,"500.09 to 48,959.95"
+interest_rate,Annual rate charged; lender's price for the risk,Numeric,%,Higher rate → riskier borrower,Scale,0,1454,3.20 to 20.99
+gender,Borrower gender,Categorical,-,Should not drive credit decisions,Fairness check only; exclude,0,3,3 levels
+marital_status,Marital status; household stability,Categorical,-,Weak signal,One-hot encode,0,4,4 levels
+education_level,Highest education completed; earning potential,Categorical,-,Weak signal,One-hot encode,0,5,5 levels
+employment_status,Current job status; stability of income,Categorical,-,Unemployed / student → much higher risk,One-hot encode,0,5,5 levels
+loan_purpose,What the money is for,Categorical,-,Some purposes slightly riskier,One-hot encode,0,8,8 levels
+grade_subgrade,"Lender's internal risk grade, A1 (best) to F5 (worst)",Ordinal,-,Worse grade → higher risk,Ordinal encode 1-30,0,30,30 levels
+loan_paid_back,"TARGET: 1 = repaid, 0 = not repaid",Binary,-,-,Target variable,0,2,0.00 to 1.00

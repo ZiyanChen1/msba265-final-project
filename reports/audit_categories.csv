@@ -1,0 +1,7 @@
+column,n_levels,has_spaces,case_clash,unseen_in_test,smallest_level_pct
+gender,3,False,False,,0.63
+marital_status,4,False,False,,1.11
+education_level,5,False,False,,1.86
+employment_status,5,False,False,,2.01
+loan_purpose,8,False,False,,1.42
+grade_subgrade,30,False,False,,0.27
